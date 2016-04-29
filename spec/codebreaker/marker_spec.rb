@@ -54,6 +54,13 @@ module Codebreaker
           expect(marker.count_number_matches).to be(1)
         end
       end
+      context "with 1 exact match duplicated in guess" do
+        it "returns 0" do
+          # pending('refactor count_number_matches')
+          marker = Marker.new('1234', '1155')
+          expect(marker.count_number_matches).to be(0)
+        end
+      end
     end
   end
 end
